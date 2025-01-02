@@ -27,7 +27,7 @@ function App() {
         wordSearch={wordSearch}
         setSearch={setSearch}
       />
-      {wordSearch ? <SearchedWord data={data} /> : null}
+      {wordSearch ? <SearchedWord data={data} /> : <h3>Loading...</h3>}
     </>
   );
 }
