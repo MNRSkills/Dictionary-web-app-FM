@@ -1,23 +1,15 @@
 import { useState } from "react";
 import axios from "axios";
 
-function Search() {
-  const [wordSearch, setSearch] = useState("");
-
+import SearchedWord from "./DisplayWord/searchedWord";
+function Search({ wordSearch, setSearch, handleWordSubmit }) {
   const handleSubmit = async (e) => {
-    // console.log("SUBMITTING SEARCH", wordSearch);
-    try {
-      axios
-        .get(`https://api.dictionaryapi.dev/api/v2/entries/en/${wordSearch}`)
-        .then((response) => console.log(response));
-    } catch (error) {
-      console.log(error);
-      
-    }
+    // console.log(e.target.value);
+    handleWordSubmit(e);
     e.preventDefault();
   };
   return (
-    <form onSubmit={handleSubmit} className='w-60 rounded-xl relative'>
+    <form onSubmit={handleSubmit} className="w-60 rounded-xl relative">
       <input
         type="text"
         value={wordSearch}
