@@ -13,7 +13,7 @@ export default {
         darker: "#1f1f1f",
         dark: "#2d2d2d",
         "dark-gray": "#3a3a3a",
-        " gray": "#757575",
+        "gray": "#757575",
         "light-gray": "#e9e9e9",
         "off-white": "#f4f4f4",
         white: "#ffffff",

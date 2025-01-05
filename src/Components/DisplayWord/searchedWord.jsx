@@ -10,15 +10,19 @@ function SearchedWord({ data }) {
     <>
       {data.map((eachWord, index) => {
         return (
-          <div key={index}>
+          <section key={index}>
             {" "}
-            <h1>{getNestedData(eachWord, ["word"])}</h1>{" "}
-            <h3>{getNestedData(eachWord, ["phonetic"])}</h3>
+            <h1 className="text-3xl font-bold font-sans">
+              {getNestedData(eachWord, ["word"])}
+            </h1>{" "}
+            <h3 className="text-purple">
+              {getNestedData(eachWord, ["phonetic"])}
+            </h3>
             {getNestedData(eachWord, ["meanings"])?.map((meaning, index) => {
               // console.log("THIS IS THE MEANING", means);
               return <Meanings key={index} meaning={meaning} />;
             })}
-          </div>
+          </section>
         );
       })}
     </>

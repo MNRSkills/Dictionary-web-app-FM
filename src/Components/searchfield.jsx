@@ -1,15 +1,10 @@
-import { useState } from "react";
-import axios from "axios";
-
-import SearchedWord from "./DisplayWord/searchedWord";
 function Search({ wordSearch, setSearch, handleWordSubmit }) {
   const handleSubmit = async (e) => {
-    // console.log(e.target.value);
     handleWordSubmit(e);
     e.preventDefault();
   };
   return (
-    <form onSubmit={handleSubmit} className="w-60 rounded-xl relative">
+    <form onSubmit={handleSubmit} className="w-60 rounded-xl relative pl-0">
       <input
         type="text"
         value={wordSearch}
