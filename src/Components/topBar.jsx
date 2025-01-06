@@ -1,7 +1,7 @@
 import { useTheme } from "../Context/themeContext";
+import ToggleTheme from "./darkTheme";
 
-function ToggleBar() {
-    const { darkTheme, darkThemeToggle } = useTheme();
+function TopBar() {
   return (
     <nav className="flex items-center justify-center gap-2">
       <img
@@ -18,20 +18,10 @@ function ToggleBar() {
         />
       </button>
       <div className="flex gap-3">
-        <input
-          type="checkbox"
-          checked={darkTheme}
-          onChange={darkThemeToggle}
-        />
-        <span>
-          <img
-            src="https://cdn.shopify.com/s/files/1/0911/1420/9592/files/icon-moon.svg?v=1736039240"
-            alt="dark-icon"
-          />
-        </span>
+        <ToggleTheme />
       </div>
     </nav>
   );
 }
 
-export default ToggleBar;
+export default TopBar;

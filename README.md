@@ -15,7 +15,11 @@ Currently, two official plugins are available:
 
 
 # Tools
-- React, TailwindCSS, Axios, Vite
+- React
+- TailwindCSS 
+- Axios 
+- Vite
+- VS Code
 
 # Project Summary
 - The user will not have a word displayed at first until they type it in. 
@@ -25,3 +29,10 @@ Currently, two official plugins are available:
 # Build Process
 - I start with creating the Vite setup with a React template
 - My next thought is styling and I wonder how I can build a mobile first design without having to write so much code, I decided TailwindCSS is a good choice. 
+
+## Jan 5, 2025 10 pm
+
+- Got stuck with the toggle knob, I'll need to research more about sr-only and how I can make this work. 
+- I will check Tailwind docs on this and look for other ways to solve this. 
+- When using sr-only the input element is hidden but is still visible to screen readers just that my toggle know is blocking the checkbox. 
+- The checkbox will toggle to dark theme (pretty cool)
