@@ -36,3 +36,7 @@ Currently, two official plugins are available:
 - I will check Tailwind docs on this and look for other ways to solve this. 
 - When using sr-only the input element is hidden but is still visible to screen readers just that my toggle know is blocking the checkbox. 
 - The checkbox will toggle to dark theme (pretty cool)
+
+## Jan 10, 2025 7 am 
+
+- found the issue with my toggle switch. The label that is a parent to the input tag needs to be paired with the htmlFor attribute. In my case the label has an prop of htmlFor with a value of "checkbox" and the input element has an id equal to "checkbox". Now I can use the sr-only to hide the checkbox and toggle dark mode. 

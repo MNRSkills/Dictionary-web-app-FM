@@ -1,9 +1,9 @@
 import { useTheme } from "../Context/themeContext";
-import ToggleTheme from "./darkTheme";
+import ToggleTheme from "./toggleTheme";
 
 function TopBar() {
   return (
-    <nav className="flex items-center justify-center gap-2">
+    <nav className="flex items-center justify-between gap-2 m-0 pr-6 pt-6 pl-6">
       <img
         src="https://cdn.shopify.com/s/files/1/0911/1420/9592/files/logo.svg?v=1736039240"
         alt="Book Pic"
@@ -19,6 +19,11 @@ function TopBar() {
       </button>
       <div className="flex gap-3">
         <ToggleTheme />
+        <img
+          className="text-purple"
+          src="https://cdn.shopify.com/s/files/1/0911/1420/9592/files/icon-moon.svg?v=1736039240"
+          alt="cresent moon"
+        />
       </div>
     </nav>
   );

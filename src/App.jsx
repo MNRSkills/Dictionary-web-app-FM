@@ -6,7 +6,7 @@ import ToggleBar from "./Components/topBar";
 import { useTheme } from "./Context/themeContext";
 
 function App() {
-  const [wordSearch, setSearch] = useState("keyboard");
+  const [wordSearch, setSearch] = useState("Keyboard");
   const [data, setData] = useState([]);
   const { darkTheme, darkToggleTheme } = useTheme();
 
@@ -23,15 +23,22 @@ function App() {
   };
 
   return (
-    <div className={`screen w-96 p-9 ${darkTheme ? "bg-darkest text-white" : "bg-white text-dark"}`}>
+    <div
+      className={`screen w-96  ${
+        darkTheme ? "bg-darkest text-white" : "bg-white text-dark"
+      }`}
+    >
       {/* TOP BAR WITH ICON AND THEME TOGGLE */}
       <ToggleBar />
+      
       {/* INPUT FIELD COMPONENT */}
-      <Search
-        handleWordSubmit={handleWordSubmit}
-        wordSearch={wordSearch}
-        setSearch={setSearch}
-      />
+      <div className="pt-5">
+        <Search
+          handleWordSubmit={handleWordSubmit}
+          wordSearch={wordSearch}
+          setSearch={setSearch}
+        />
+      </div>
 
       {/* CONDITIONALLY RENDER THE DEFINITIONS */}
       {wordSearch ? <SearchedWord data={data} /> : <h3>Loading...</h3>}

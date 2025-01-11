@@ -3,18 +3,16 @@ import { useTheme } from "../Context/themeContext";
 function ToggleTheme() {
   const { darkTheme, darkThemeToggle } = useTheme();
   return (
-    <label
-      htmlFor="check"
-      className="relative w-[71.993px] h-5 inline-flex items-center cursor-pointer rounded-full bg-gray-200"
-    >
+    <label htmlFor="checkbox" className="relative  cursor-pointer w-11 h-5 bg-purple rounded-full">
       <input
+        id="checkbox"
         type="checkbox"
         checked={darkTheme}
         onChange={darkThemeToggle}
-        className=" peer absolute"
+        className="sr-only peer"
       />
       <div
-        className="absolute -top-[1px] left-[2px] h-5 w-5 bg-white border border-gray-300
+        className="absolute top-[2px] left-[2px] h-4 w-4 bg-white border border-gray-300
           rounded-full transition-all peer-checked:translate-x-5 peer-checked:border-white"
       ></div>
       {/* <div
@@ -23,10 +21,7 @@ function ToggleTheme() {
       >
       </div> */}
 
-      {/* <img
-        src="https://cdn.shopify.com/s/files/1/0911/1420/9592/files/icon-moon.svg?v=1736039240"
-        alt="cresent moon"
-      /> */}
+      
     </label>
   );
 }
