@@ -40,3 +40,7 @@ Currently, two official plugins are available:
 ## Jan 10, 2025 7 am 
 
 - found the issue with my toggle switch. The label that is a parent to the input tag needs to be paired with the htmlFor attribute. In my case the label has an prop of htmlFor with a value of "checkbox" and the input element has an id equal to "checkbox". Now I can use the sr-only to hide the checkbox and toggle dark mode. 
+
+## Jan 13 2025 
+
+- I need to store the error messages to warn the user when ther isn't a definition for the word. API returns an error when the field is empty so I need come up with a way to create a conditional statement that will check for the word and only store the message in state. 

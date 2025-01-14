@@ -15,10 +15,13 @@ function Search({ wordSearch, setSearch, handleWordSubmit }) {
         type="text"
         // value={wordSearch}
         value={wordSearch}
-        onChange={(e) => setSearch(e.target.value)}
+        onChange={(e) => {
+          setSearch(e.target.value);
+          // setError(null);
+        }}
         placeholder="search"
         className={` relative w-[327px] h-12  rounded-2xl pl-6 ${
-          darkTheme ? "bg-darker text-white" : "bg-white text-dark"
+          darkTheme ? "bg-darker text-white" : "bg-off-white text-dark"
         }`}
       />
 

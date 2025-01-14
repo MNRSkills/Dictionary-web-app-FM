@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import Search from "./Components/searchfield";
 import SearchedWord from "./Components/DisplayWord/searchedWord";
 import ToggleBar from "./Components/topBar";
 import { useTheme } from "./Context/themeContext";
+import { getNestedData } from "./utils";
 
 function App() {
-  const [wordSearch, setSearch] = useState("Keyboard");
+  const [wordSearch, setSearch] = useState("keyboard");
   const [data, setData] = useState([]);
+  const [errorMsg, setErrorMsg] = useState({});
   const { darkTheme, darkToggleTheme } = useTheme();
 
   const handleWordSubmit = async () => {
@@ -15,28 +17,36 @@ function App() {
     try {
       await axios
         .get(`https://api.dictionaryapi.dev/api/v2/entries/en/${wordSearch}`)
-        .then((response) => setData(response.data));
+        .then((response) => {
+          setData(response.data);
+        });
       // setSearch("");
     } catch (error) {
-      console.log(error);
+      if (error.response.data !== null) {
+        setErrorMsg(error.response.data);
+        console.log("ERROR", error.response);
+      } else {
+        console.log("THIS ERROR WORD IS EMPTY FILL IN BLANK FIELD");
+      }
     }
   };
 
+  useEffect(() => {
+    handleWordSubmit();
+  }, [wordSearch]);
+
   return (
-    <div
-      className={`screen w-96  ${
-        darkTheme ? "bg-darkest text-white" : "bg-white text-dark"
-      }`}
-    >
+    <div className={`w-96  ${darkTheme ? " text-white" : " text-dark"}`}>
       {/* TOP BAR WITH ICON AND THEME TOGGLE */}
       <ToggleBar />
-      
+
       {/* INPUT FIELD COMPONENT */}
       <div className="pt-5">
         <Search
           handleWordSubmit={handleWordSubmit}
           wordSearch={wordSearch}
           setSearch={setSearch}
+          // setError={setErrorMsg}
         />
       </div>
 

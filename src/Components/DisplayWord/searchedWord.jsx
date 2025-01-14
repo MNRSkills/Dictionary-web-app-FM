@@ -22,7 +22,7 @@ function SearchedWord({ data }) {
             </div>
             {getNestedData(eachWord, ["meanings"])?.map((meaning, index) => {
               // console.log("THIS IS THE MEANING", means);
-              return <Meanings key={index} meaning={meaning} />;
+              return <Meanings key={index.toString()} meaning={meaning} />;
             })}
           </section>
         );
